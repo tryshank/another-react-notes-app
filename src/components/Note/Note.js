@@ -1,14 +1,14 @@
 import React from "react";
-import { formatTimestamp } from "../../helpers/helpers";
+import { formatTitle, formatTimestamp } from "../../helpers/helpers";
 
 const Note = props => (
   <div
-    className="note"
+    className={"note " + (props.id === props.selectedNoteId ? "active" : "")}
     onClick={() => {
       props.onClickNote(props.id);
     }}
   >
-    <p className="note-title">{props.body}</p>
+    <p className="note-title">{formatTitle(props.body)}</p>
     <p className="note-timestamp">{formatTimestamp(props.timestamp)}</p>
   </div>
 );
