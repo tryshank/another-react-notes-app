@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NoteContainer from "./Note/NoteContainer";
+import Toolbar from "./Toolbar/Toolbar";
 import "./App.css";
 
 const App = props => {
@@ -36,8 +37,30 @@ const App = props => {
     setNotes(newNotes);
   };
 
+  const handleNewNote = () => {
+    const newNote = {
+      id: Date.now(),
+      body: "",
+      timestamp: Date.now()
+    };
+
+    setNotes(notes.concat([newNote]));
+    setSelectedNoteId(newNote.id);
+  };
+
+  const handleDeleteNote = () => {
+    const newNotes = notes.filter(note => note.id !== selectedNoteId);
+    const transformedNotes = newNotes;
+    const newSelectedNoteId =
+      transformedNotes.length > 0 ? transformedNotes[0].id : null;
+
+    setNotes(newNotes);
+    setSelectedNoteId(newSelectedNoteId);
+  };
+
   return (
     <div id="app">
+      <Toolbar onNewNote={handleNewNote} onDeleteNote={handleDeleteNote} />
       <NoteContainer
         notes={notes}
         selectedNoteId={selectedNoteId}
