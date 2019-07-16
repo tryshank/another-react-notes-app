@@ -4,6 +4,8 @@
   border: 0;
   outline: none;
   box-sizing: border-box;
+  color: #454545;
+  background-color: #FAFAF8;
 }
 
 #app {
@@ -17,9 +19,12 @@
 }
 .note-list {
   flex: 0 0 13em;
+  border-right: 1px solid #DCDADC;
 }
 .note {
   padding: 1em;
+  border-bottom: 1px solid #DCDADC;
+  cursor: pointer;
 }
 .note p {
   margin: 0;
@@ -32,37 +37,27 @@
 .note-editor-info {
   padding: 0.5em;
   text-align: center;
+  color: #DCDADC;
 }
 .note-editor-input {
   display: flex;
   flex: 1;
   width: 100%;
-  padding: 1em 2em 0 2em;
+  padding: 0 2em 0 2em;
 }
 
-* {
-  color: #454545;
-  background-color: #FAFAF8;
-}
-.note-list {
-  border-right: 1px solid #DCDADC;
-}
-.note {
-  border-bottom: 1px solid #DCDADC;
-  cursor: pointer;
-}
 .note-title {
   background-color: inherit;
+  font-weight: bold;
 }
-.note-editor-info {
-  color: #DCDADC;
+.note-timestamp {
+  color: #626262;
+  background-color: inherit;
+  font-size: 0.7em;
 }
 
 body {
   font-family: sans-serif;
-}
-.note-title {
-  font-weight: bold;
 }
 .note-editor, .note-editor-input {
   font-size: 0.9em;

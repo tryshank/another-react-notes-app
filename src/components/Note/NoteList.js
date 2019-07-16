@@ -7,6 +7,7 @@ const NoteList = props => {
       key={note.id}
       id={note.id}
       body={note.body}
+      timestamp={note.timestamp}
       selectedNoteId={props.selectedNoteId}
       onClickNote={props.onClickNote}
     />
