@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  color: #454545;
+  background-color: #FAFAF8;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body {
+  font-family: sans-serif;
+}
+.note {
+  padding: 1em;
+  border-bottom: 1px solid #DCDADC;
+  cursor: pointer;
+}
+.note.active {
+  background-color: #FCE18D;
+}
+.note-container {
+  display: flex;
+  flex: 1;
+}
+.note-editor {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.note-editor-info {
+  padding: 0.5em;
+  text-align: center;
+  color: #DCDADC;
+}
+.note-editor-input {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  padding: 0 2em 0 2em;
+}
+.note-editor, .note-editor-input {
+  font-size: 0.9em;
+}
+.note-list {
+  flex: 0 0 13em;
+  border-right: 1px solid #DCDADC;
+}
+.note p {
+  margin: 0;
+}
+.note-title {
+  background-color: inherit;
+  font-weight: bold;
+}
+.note-timestamp {
+  color: #626262;
+  background-color: inherit;
+  font-size: 0.7em;
+}
+.toolbar {
+  padding: 0.5em;
+  background-color: #DCDADC;
+}
+.toolbar-button {
+  background-color: #FFFFFF;
+}
+.toolbar-button, .toolbar-search {
+  padding: inherit;
+  border-radius: 0.3em;
+  margin-right: 1em;
+}
+.toolbar-button:active {
+  background-color: #AAAAAA;
+}
+.toolbar-search {
+  float: right;
+}
