@@ -7,19 +7,13 @@
   color: #454545;
   background-color: #FAFAF8;
 }
-
 #app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.note-container {
-  display: flex;
-  flex: 1;
-}
-.note-list {
-  flex: 0 0 13em;
-  border-right: 1px solid #DCDADC;
+body {
+  font-family: sans-serif;
 }
 .note {
   padding: 1em;
@@ -29,8 +23,9 @@
 .note.active {
   background-color: #FCE18D;
 }
-.note p {
-  margin: 0;
+.note-container {
+  display: flex;
+  flex: 1;
 }
 .note-editor {
   display: flex;
@@ -48,7 +43,16 @@
   width: 100%;
   padding: 0 2em 0 2em;
 }
-
+.note-editor, .note-editor-input {
+  font-size: 0.9em;
+}
+.note-list {
+  flex: 0 0 13em;
+  border-right: 1px solid #DCDADC;
+}
+.note p {
+  margin: 0;
+}
 .note-title {
   background-color: inherit;
   font-weight: bold;
@@ -58,24 +62,21 @@
   background-color: inherit;
   font-size: 0.7em;
 }
-
-body {
-  font-family: sans-serif;
-}
-.note-editor, .note-editor-input {
-  font-size: 0.9em;
-}
-
 .toolbar {
   padding: 0.5em;
   background-color: #DCDADC;
 }
 .toolbar-button {
+  background-color: #FFFFFF;
+}
+.toolbar-button, .toolbar-search {
   padding: inherit;
   border-radius: 0.3em;
   margin-right: 1em;
-  background-color: #FFFFFF;
 }
 .toolbar-button:active {
   background-color: #AAAAAA;
+}
+.toolbar-search {
+  float: right;
 }

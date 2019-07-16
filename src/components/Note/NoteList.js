@@ -1,8 +1,9 @@
 import React from "react";
 import Note from "./Note";
+import { transformNotes } from "../../helpers/helpers";
 
 const NoteList = props => {
-  const noteList = props.notes.map(note => (
+  const noteList = transformNotes(props.notes, props.searchText).map(note => (
     <Note
       key={note.id}
       id={note.id}

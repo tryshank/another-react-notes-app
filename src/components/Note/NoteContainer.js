@@ -13,6 +13,7 @@ const NoteContainer = props => {
         notes={props.notes}
         selectedNoteId={props.selectedNoteId}
         onClickNote={props.onClickNote}
+        searchText={props.searchText}
       />
       <NoteEditor
         selectedNote={selectedNote}

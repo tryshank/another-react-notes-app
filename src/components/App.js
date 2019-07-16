@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NoteContainer from "./Note/NoteContainer";
 import Toolbar from "./Toolbar/Toolbar";
+import { transformNotes } from "../helpers/helpers";
 import "./App.css";
 
 const App = props => {
@@ -14,12 +15,12 @@ const App = props => {
   };
 
   const [selectedNoteId, setSelectedNoteId] = useState(1);
+  const [notes, setNotes] = useState(state.notes);
+  const [searchText, setSearchText] = useState("");
 
   const handleClickNote = id => {
     setSelectedNoteId(id);
   };
-
-  const [notes, setNotes] = useState(state.notes);
 
   const handleNoteEditorChange = text => {
     const newNotes = notes.map(note => {
@@ -58,12 +59,35 @@ const App = props => {
     setSelectedNoteId(newSelectedNoteId);
   };
 
+  const handleSearchNote = newSearchText => {
+    const transformedNotes = transformNotes(notes, newSearchText);
+    let newSelectedNoteId = null;
+    if (transformedNotes.length > 0) {
+      const selectedNote = transformedNotes.find(
+        note => note.id === selectedNoteId
+      );
+      if (selectedNote) {
+        newSelectedNoteId = selectedNote.id;
+      } else {
+        newSelectedNoteId = transformedNotes[0].id;
+      }
+    }
+
+    setSearchText(newSearchText);
+    setSelectedNoteId(newSelectedNoteId);
+  };
+
   return (
     <div id="app">
-      <Toolbar onNewNote={handleNewNote} onDeleteNote={handleDeleteNote} />
+      <Toolbar
+        onNewNote={handleNewNote}
+        onDeleteNote={handleDeleteNote}
+        onSearchNote={handleSearchNote}
+      />
       <NoteContainer
         notes={notes}
         selectedNoteId={selectedNoteId}
+        searchText={searchText}
         onClickNote={handleClickNote}
         onNoteEditorChange={handleNoteEditorChange}
       />
