@@ -18,7 +18,6 @@ const App = props => {
   const [notes, setNotes] = useState(state.notes);
   const [searchText, setSearchText] = useState("");
 
-
   const handleClickNote = id => {
     setSelectedNoteId(id);
   };
@@ -31,9 +30,8 @@ const App = props => {
           body: text,
           timestamp: Date.now()
         };
-      } else {
-        return note;
       }
+      return note;
     });
 
     setNotes(newNotes);
