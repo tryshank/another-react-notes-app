@@ -16,7 +16,8 @@ body {
   font-family: sans-serif;
 }
 .note {
-  padding: 1em;
+  font-size: 16px;
+  padding: 1em 0 1em 1.5em;
   border-bottom: 1px solid #DCDADC;
   cursor: pointer;
 }
@@ -67,7 +68,8 @@ body {
   background-color: #DCDADC;
 }
 .toolbar-button {
-  width: 2.8em;
+  height: 2.8em;
+  width: 5em;
   background-color: #FFFFFF;
 }
 .toolbar-button, .toolbar-search {
@@ -81,8 +83,9 @@ body {
 .toolbar-search {
   float: right;
   display: flex;
-  justify-content: space-around;
+  width: 13em;
+  height: 1.9em;
 }
 .toolbar-search-icon {
-  margin-right: 0.3em;
+  margin-right: 0.6em;
 }
