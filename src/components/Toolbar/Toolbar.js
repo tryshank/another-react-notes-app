@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Toolbar = props => {
   const handleInput = event => {
@@ -8,17 +9,15 @@ const Toolbar = props => {
   return (
     <div className="toolbar">
       <button className="toolbar-button" onClick={props.onNewNote}>
-        New
+        <FontAwesomeIcon icon="edit" />
       </button>
       <button className="toolbar-button" onClick={props.onDeleteNote}>
-        Delete
+        <FontAwesomeIcon icon="trash-alt" />
       </button>
-      <input
-        className="toolbar-search"
-        type="text"
-        placeholder="Search..."
-        onInput={handleInput}
-      />
+      <div className="toolbar-search">
+        <FontAwesomeIcon className="toolbar-search-icon" icon="search" />
+        <input type="text" placeholder="Search..." onInput={handleInput} />
+      </div>
     </div>
   );
 };

@@ -18,6 +18,7 @@ const App = props => {
   const [notes, setNotes] = useState(state.notes);
   const [searchText, setSearchText] = useState("");
 
+
   const handleClickNote = id => {
     setSelectedNoteId(id);
   };

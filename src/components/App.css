@@ -67,6 +67,7 @@ body {
   background-color: #DCDADC;
 }
 .toolbar-button {
+  width: 2.8em;
   background-color: #FFFFFF;
 }
 .toolbar-button, .toolbar-search {
@@ -75,8 +76,13 @@ body {
   margin-right: 1em;
 }
 .toolbar-button:active {
-  background-color: #AAAAAA;
+  background-color: #F7F7F7;
 }
 .toolbar-search {
   float: right;
+  display: flex;
+  justify-content: space-around;
+}
+.toolbar-search-icon {
+  margin-right: 0.3em;
 }
