@@ -14,7 +14,5 @@ export const formatTimestamp = timestamp => new Date(timestamp).toUTCString();
 export const transformNotes = (notes, searchText) =>
   notes
     .slice()
-    .sort((a, b) => b.timestamp - a.timestamp)
-    .filter(
-      note => note.body.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
-    );
+    .sort((firstNote, secondNote) => firstNote.timestamp - secondNote.timestamp)
+    .filter(note => note.body.toLowerCase().includes(searchText.toLowerCase()));
